@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="김지아 AI·데이터 기반 웹기획자 포트폴리오">
+<title>김지아 Portfolio</title>
+<style>
+:root{
+  --navy:#073b91;
+  --navy-dark:#052b68;
+  --cream:#f3ead9;
+  --paper:#fbf7ef;
+  --ink:#172033;
+  --muted:#6f6b63;
+  --line:#d9cdbb;
+  --white:#fff;
+  --radius:28px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:#ece8df;
+  color:var(--ink);
+  font-family:Pretendard,"Noto Sans KR",Arial,sans-serif;
+}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.page{
+  width:min(1180px,calc(100% - 28px));
+  margin:18px auto;
+  background:var(--paper);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:0 24px 70px rgba(18,31,52,.15);
+}
+header{
+  position:sticky;top:0;z-index:20;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 34px;
+  background:rgba(251,247,239,.93);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(217,205,187,.7);
+}
+.logo{font-weight:900;letter-spacing:.12em;color:var(--navy)}
+nav{display:flex;gap:24px;font-size:13px;font-weight:800}
+nav a:hover{color:var(--navy)}
+.hero{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  min-height:680px;
+  border-bottom:1px solid var(--line);
+}
+.hero-left{
+  position:relative;
+  padding:70px 52px 46px;
+  border-right:1px solid var(--line);
+}
+.kicker{
+  color:var(--navy);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+}
+.hero-title{
+  margin:16px 0 28px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(68px,10vw,142px);
+  line-height:.77;
+  letter-spacing:-.075em;
+  color:var(--navy);
+}
+.hero-title span{display:block}
+.intro{
+  max-width:520px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:22px;
+  line-height:1.55;
+  margin-top:38px;
+}
+.intro strong{color:var(--navy)}
+.hero-tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}
+.tag{
+  padding:8px 12px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  font-size:12px;
+  font-weight:800;
+  background:#fffaf1;
+}
+.side-label{
+  position:absolute;
+  left:12px;bottom:30px;
+  writing-mode:vertical-rl;
+  transform:rotate(180deg);
+  font-size:10px;
+  letter-spacing:.18em;
+  color:var(--muted);
+}
+.hero-right{
+  position:relative;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  padding:55px 38px 0;
+  background:
+    radial-gradient(circle at 88% 0%,rgba(255,255,255,.8) 0 18%,transparent 19%),
+    linear-gradient(180deg,#e9dec9,#f8f1e5);
+}
+.hero-right:before{
+  content:"";
+  position:absolute;right:0;top:78px;
+  width:44%;height:210px;
+  border-radius:90px 0 0 90px;
+  background:rgba(255,255,255,.45);
+}
+.portrait{
+  position:relative;z-index:2;
+  width:85%;
+  max-height:580px;
+  object-fit:cover;
+  object-position:50% 15%;
+  border-radius:120px 120px 0 0;
+  filter:saturate(.85) contrast(.98);
+}
+.badge{
+  position:absolute;right:28px;top:44px;z-index:3;
+  width:74px;height:74px;border-radius:50%;
+  background:var(--navy);color:white;
+  display:grid;place-items:center;
+  font-family:Georgia,serif;
+  font-size:22px;
+  border:6px solid var(--paper);
+  box-shadow:0 10px 30px rgba(7,59,145,.25);
+}
+.meta-strip{
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  border-bottom:1px solid var(--line);
+}
+.meta-copy{padding:34px 52px;border-right:1px solid var(--line)}
+.meta-copy p{margin:0;font-family:Georgia,serif;font-size:24px;line-height:1.45;color:var(--navy)}
+.meta-stats{display:grid;grid-template-columns:1fr 1fr}
+.stat{padding:28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stat:nth-child(2n){border-right:0}
+.stat:nth-child(n+3){border-bottom:0}
+.stat strong{display:block;font-size:30px;color:var(--navy)}
+.stat span{font-size:12px;color:var(--muted)}
+.section{
+  padding:56px 52px;
+  border-bottom:1px solid var(--line);
+}
+.section-head{
+  display:flex;align-items:end;justify-content:space-between;
+  gap:24px;margin-bottom:28px
+}
+.section-no{
+  color:var(--navy);font-size:13px;font-weight:900;letter-spacing:.18em
+}
+.section h2{
+  margin:6px 0 0;
+  font-family:Georgia,serif;
+  font-size:48px;
+  letter-spacing:-.04em;
+  color:var(--navy);
+}
+.section-note{max-width:420px;color:var(--muted);font-size:14px}
+.work-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px
+}
+.work-card{
+  border:1px solid var(--line);
+  background:#f7efe2;
+  min-height:330px;
+  padding:14px;
+  transition:.25s;
+}
+.work-card:hover{transform:translateY(-5px);box-shadow:0 16px 35px rgba(41,47,58,.1)}
+.work-thumb{
+  height:180px;
+  background:linear-gradient(140deg,#d3bfa5,#f7ead5);
+  border:1px solid rgba(7,59,145,.12);
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+.device{
+  width:78%;height:72%;
+  background:#13203b;border-radius:12px;
+  box-shadow:0 14px 20px rgba(0,0,0,.2);
+  transform:rotate(-2deg);
+  padding:7px;
+}
+.device-screen{
+  width:100%;height:100%;background:#fff;
+  display:grid;grid-template-columns:.35fr .65fr;gap:6px;padding:7px
+}
+.device-screen div{background:#e7ebf4}
+.work-index{font-size:11px;color:var(--muted);margin:13px 0 5px}
+.work-card h3{margin:0;color:var(--navy);font-size:19px}
+.work-card p{font-size:13px;color:var(--muted);line-height:1.55}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.pills span{font-size:10px;font-weight:800;border:1px solid var(--line);padding:5px 7px;border-radius:999px}
+.process-layout{
+  display:grid;grid-template-columns:1.2fr .8fr;gap:34px;align-items:center
+}
+.process-list{display:grid;gap:0}
+.process-item{
+  display:grid;grid-template-columns:52px 1fr;
+  border-top:1px solid var(--line);padding:18px 0
+}
+.process-item:last-child{border-bottom:1px solid var(--line)}
+.process-item strong{color:var(--navy);font-size:18px}
+.process-item h3{margin:0 0 4px;font-size:17px}
+.process-item p{margin:0;color:var(--muted);font-size:13px}
+.wheel{
+  aspect-ratio:1;max-width:380px;margin:auto;
+  border-radius:50%;
+  background:conic-gradient(var(--navy) 0 25%,#d8c5a7 25% 50%,#f3ead9 50% 75%,#6d8bc2 75%);
+  position:relative;
+  box-shadow:inset 0 0 0 18px var(--paper);
+}
+.wheel:after{
+  content:"AI + UX";
+  position:absolute;inset:32%;
+  border-radius:50%;
+  background:var(--paper);
+  display:grid;place-items:center;
+  color:var(--navy);font-weight:900;
+  border:1px solid var(--line)
+}
+.learning-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:18px
+}
+.learning-card{
+  border:1px solid var(--line);
+  padding:28px;
+  background:#fffaf2;
+}
+.learning-card h3{
+  margin:0 0 8px;color:var(--navy);font-size:22px
+}
+.learning-card p{margin:0 0 18px;color:var(--muted)}
+.module-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.module{
+  border-top:1px solid var(--line);
+  padding-top:10px;
+  font-size:12px
+}
+.module b{display:block;color:var(--navy);margin-bottom:2px}
+.skills{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:12px
+}
+.skill{
+  padding:20px;border:1px solid var(--line);background:#f7efe2
+}
+.skill strong{display:block;color:var(--navy);font-size:18px;margin-bottom:8px}
+.skill span{font-size:12px;color:var(--muted)}
+.quote{
+  padding:62px 52px;
+  background:var(--navy);
+  color:white;
+  display:grid;grid-template-columns:1fr .65fr;gap:40px;align-items:end
+}
+.quote h2{
+  margin:0;font-family:Georgia,serif;
+  font-size:clamp(44px,7vw,88px);line-height:.95;
+  font-weight:400
+}
+.quote p{margin:0;color:#dbe6ff;font-size:16px;line-height:1.7}
+.contact{
+  padding:52px;
+  background:var(--navy-dark);
+  color:white;
+  display:grid;grid-template-columns:1fr 1fr;gap:30px
+}
+.contact h2{font-family:Georgia,serif;font-size:56px;margin:0 0 16px}
+.contact p{color:#c9d7f4}
+.contact-links{display:grid;gap:12px;align-content:end}
+.contact-link{
+  display:flex;justify-content:space-between;
+  padding:14px 0;border-bottom:1px solid rgba(255,255,255,.3);
+  font-weight:800
+}
+footer{background:var(--navy-dark);color:#8fa7d3;padding:18px 52px;font-size:12px}
+@media(max-width:900px){
+  .hero,.meta-strip,.process-layout,.quote,.contact{grid-template-columns:1fr}
+  .hero-left{border-right:0}
+  .hero-right{min-height:520px}
+  .work-grid{grid-template-columns:1fr 1fr}
+  .skills{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .page{width:100%;margin:0;border-radius:0}
+  header{padding:16px 18px}
+  nav{display:none}
+  .hero-left,.section,.meta-copy,.quote,.contact{padding:38px 22px}
+  .hero-title{font-size:72px}
+  .hero-right{padding:30px 18px 0;min-height:440px}
+  .portrait{width:94%}
+  .meta-stats,.learning-grid,.work-grid,.skills{grid-template-columns:1fr}
+  .section-head{align-items:start;flex-direction:column}
+  .section h2{font-size:38px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<header>
+  <a href="#top" class="logo">JIA KIM · PORTFOLIO</a>
+  <nav>
+    <a href="#work">WORK</a>
+    <a href="#process">PROCESS</a>
+    <a href="#learning">LEARNING</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-left">
+    <div class="kicker">Web Planner · AI · Data · UX/UI</div>
+    <h1 class="hero-title"><span>PORT</span><span>FOLIO</span></h1>
+    <p class="intro">
+      <strong>사용자의 문제를 발견하고, 데이터와 AI를 활용해 실행 가능한 서비스로 설계합니다.</strong><br>
+      웹기획 경력과 UX/UI, 데이터 분석 역량을 연결하는 기획자 김지아입니다.
+    </p>
+    <div class="hero-tags">
+      <span class="tag">Web Planning</span>
+      <span class="tag">UX Research</span>
+      <span class="tag">Data Analysis</span>
+      <span class="tag">AI Automation</span>
+    </div>
+    <div class="side-label">CRAFTING DIGITAL EXPERIENCES · KIM JIA</div>
+  </div>
+  <div class="hero-right">
+    <div class="badge">JIA</div>
+    <img src="profile.png" class="portrait" alt="김지아 프로필 사진">
+  </div>
+</section>
+
+<section class="meta-strip">
+  <div class="meta-copy">
+    <p>“기획 경험 위에 AI와 데이터를 더해, 사용성과 비즈니스 성과를 함께 개선합니다.”</p>
+  </div>
+  <div class="meta-stats">
+    <div class="stat"><strong>7년+</strong><span>웹기획 경험</span></div>
+    <div class="stat"><strong>30+</strong><span>프로젝트</span></div>
+    <div class="stat"><strong>15+</strong><span>AI·업무도구</span></div>
+    <div class="stat"><strong>600h+</strong><span>전문교육</span></div>
+  </div>
+</section>
+
+<section class="section" id="work">
+  <div class="section-head">
+    <div><div class="section-no">01 · SELECTED WORK</div><h2>주요 프로젝트</h2></div>
+    <p class="section-note">프로젝트별로 문제 정의, 역할, 과정, 산출물, 결과와 인사이트가 보이도록 구성했습니다.</p>
+  </div>
+  <div class="work-grid">
+    <article class="work-card">
+      <div class="work-thumb"><div class="device"><div class="device-screen"><div></div><div></div></div></div></div>
+      <div class="work-index">01 · WEB PLANNING</div>
+      <h3>쇼핑몰 관리자 페이지 구축</h3>
+      <p>상품·주문·회원·통계 업무를 한 화면에서 효율적으로 처리하도록 관리자 UX와 프로세스를 설계했습니다.</p>
+      <div class="pills"><span>요구사항</span><span>IA</span><span>화면설계</span></div>
+    </article>
+    <article class="work-card">
+      <div class="work-thumb"><div class="device" style="width:52%;height:88%;border-radius:28px;transform:rotate(7deg)"><div class="device-screen" style="display:block;background:linear-gradient(#0c2345 0 28%,#fff 28%)"></div></div></div>
+      <div class="work-index">02 · DATA ANALYSIS</div>
+      <h3>체류시간과 구매전환율 분석</h3>
+      <p>사용자 행동 데이터를 분석해 체류시간이 구매전환에 미치는 영향을 해석하고 개선안을 제안했습니다.</p>
+      <div class="pills"><span>EDA</span><span>시각화</span><span>인사이트</span></div>
+    </article>
+    <article class="work-card">
+      <div class="work-thumb"><div class="device" style="transform:rotate(5deg)"><div class="device-screen" style="grid-template-columns:1fr"><div style="background:linear-gradient(90deg,#e8edf8 62%,#315efb 62%)"></div></div></div></div>
+      <div class="work-index">03 · UX RESEARCH</div>
+      <h3>청년 지역정착 인사이트</h3>
+      <p>청년 인구와 생활환경 데이터를 분석하고 페르소나와 고객여정을 통해 지역정착 요인을 정리했습니다.</p>
+      <div class="pills"><span>Persona</span><span>Journey Map</span><span>Infographic</span></div>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="section-head">
+    <div><div class="section-no">02 · MY PROCESS</div><h2>기획 프로세스</h2></div>
+    <p class="section-note">감각에 의존하지 않고, 문제를 정의한 뒤 사용자와 데이터를 근거로 해결안을 설계합니다.</p>
+  </div>
+  <div class="process-layout">
+    <div class="process-list">
+      <div class="process-item"><strong>01</strong><div><h3>Discover</h3><p>사용자, 시장, 운영환경을 조사하고 문제의 맥락을 파악합니다.</p></div></div>
+      <div class="process-item"><strong>02</strong><div><h3>Define</h3><p>핵심 문제와 목표, 대상 사용자, 성공지표를 명확히 정의합니다.</p></div></div>
+      <div class="process-item"><strong>03</strong><div><h3>Design</h3><p>IA, User Flow, 화면설계, 프로토타입으로 해결안을 구체화합니다.</p></div></div>
+      <div class="process-item"><strong>04</strong><div><h3>Deliver</h3><p>협업 문서와 일정, 검수 기준을 정리하고 실제 결과물로 연결합니다.</p></div></div>
+    </div>
+    <div class="wheel"></div>
+  </div>
+</section>
+
+<section class="section" id="learning">
+  <div class="section-head">
+    <div><div class="section-no">03 · PROFESSIONAL LEARNING</div><h2>전문 교육과정</h2></div>
+    <p class="section-note">교육과정을 나열하지 않고, 각 학습 내용이 실무 기획에 어떻게 연결되는지 보여줍니다.</p>
+  </div>
+  <div class="learning-grid">
+    <article class="learning-card">
+      <h3>AI·데이터 실무 전문가 양성과정</h3>
+      <p>AI 도구와 데이터 분석을 활용해 기획·분석·자동화 역량을 확장했습니다.</p>
+      <div class="module-grid">
+        <div class="module"><b>생성형 AI</b>ChatGPT, Claude, Gemini, NotebookLM</div>
+        <div class="module"><b>Python</b>기초 문법, 함수, 클래스, 데이터 처리</div>
+        <div class="module"><b>데이터 분석</b>Pandas, EDA, 상관분석, 인사이트</div>
+        <div class="module"><b>시각화</b>Matplotlib, 보고서, 대시보드</div>
+        <div class="module"><b>AI Agent</b>Workflow, 자동화, 오케스트레이션</div>
+        <div class="module"><b>포트폴리오</b>AI 서비스 기획과 결과물 정리</div>
+      </div>
+    </article>
+    <article class="learning-card">
+      <h3>UX/UI 전문과정</h3>
+      <p>사용자 조사부터 화면설계와 반응형 구현까지 전 과정을 학습했습니다.</p>
+      <div class="module-grid">
+        <div class="module"><b>UX Research</b>설문, 인터뷰, 어피니티 다이어그램</div>
+        <div class="module"><b>사용자 정의</b>Persona, Pain Point, 시나리오</div>
+        <div class="module"><b>서비스 구조</b>IA, User Flow, 메뉴체계</div>
+        <div class="module"><b>UI 설계</b>Wireframe, Prototype, Design System</div>
+        <div class="module"><b>Figma</b>Auto Layout, Component, Variables</div>
+        <div class="module"><b>웹 구현</b>HTML, CSS, JavaScript, 반응형</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <div><div class="section-no">04 · SERVICES & SKILLS</div><h2>핵심 역량</h2></div>
+  </div>
+  <div class="skills">
+    <div class="skill"><strong>웹·서비스 기획</strong><span>요구사항, 정책, 화면설계, 관리자 UX</span></div>
+    <div class="skill"><strong>UX/UI</strong><span>리서치, Persona, Journey Map, Prototype</span></div>
+    <div class="skill"><strong>AI 활용</strong><span>기획·문서·콘텐츠 생성과 업무 자동화</span></div>
+    <div class="skill"><strong>데이터 분석</strong><span>전처리, EDA, 시각화, 비즈니스 인사이트</span></div>
+  </div>
+</section>
+
+<section class="quote">
+  <h2>Design with clarity.<br>Build with purpose.</h2>
+  <p>사용자가 이해하기 쉽고, 운영자가 관리하기 편하며, 조직이 성과를 확인할 수 있는 서비스를 기획합니다.</p>
+</section>
+
+<section class="contact" id="contact">
+  <div>
+    <h2>Let’s<br>Collaborate.</h2>
+    <p>AI·데이터 기반 웹기획과 UX/UI 프로젝트에 함께할 기회를 기다립니다.</p>
+  </div>
+  <div class="contact-links">
+    <a class="contact-link" href="mailto:yourmail@example.com"><span>Email</span><span>yourmail@example.com ↗</span></a>
+    <a class="contact-link" href="https://github.com/" target="_blank"><span>GitHub</span><span>github.com/your-id ↗</span></a>
+    <a class="contact-link" href="#" target="_blank"><span>Notion</span><span>상세 프로젝트 보기 ↗</span></a>
+  </div>
+</section>
+<footer>© 2026 KIM JIA · AI DATA WEB PLANNER</footer>
+</div>
+</body>
+</html>
