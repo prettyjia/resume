@@ -327,6 +327,27 @@ footer{background:var(--navy-dark);color:#8fa7d3;padding:18px 52px;font-size:12p
 .career-guide{margin-top:18px;border:1px dashed var(--navy);background:#f7f1e7;padding:20px}
 .career-guide strong{color:var(--navy)}
 
+
+.learning-timeline{position:relative;display:grid;gap:22px;margin-top:10px}
+.learning-timeline:before{content:"";position:absolute;left:27px;top:12px;bottom:12px;width:1px;background:linear-gradient(var(--navy),var(--line))}
+.edu-card{position:relative;display:grid;grid-template-columns:56px 1fr;gap:22px}
+.edu-marker{position:relative;z-index:2;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#fff;border:7px solid var(--paper);box-shadow:0 0 0 1px var(--line);font-family:Georgia,"Times New Roman",serif;font-size:15px;font-weight:700}
+.edu-content{border:1px solid var(--line);background:#fffaf2;padding:28px;transition:.25s ease}
+.edu-content:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(18,31,52,.09)}
+.edu-top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.edu-title-wrap h3{margin:0;color:var(--navy);font-size:25px;letter-spacing:-.02em}
+.edu-org{margin-top:6px;color:var(--muted);font-size:13px}
+.edu-period{flex:0 0 auto;color:var(--navy);font-size:13px;font-weight:900;letter-spacing:.04em;padding:7px 10px;border:1px solid var(--line);background:var(--paper)}
+.edu-summary{margin:18px 0 20px;color:var(--muted);font-size:14px;line-height:1.75}
+.edu-modules{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.edu-module{min-height:92px;padding:14px;border-top:2px solid var(--navy);background:#f6efe3;font-size:12px;color:var(--muted);line-height:1.55}
+.edu-module b{display:block;margin-bottom:5px;color:var(--navy);font-size:12px}
+.edu-note{margin-top:14px;padding:13px 15px;border-left:3px solid var(--navy);background:#f3ead9;color:#4f4a43;font-size:12px;line-height:1.65}
+.edit-guide{margin-top:24px;padding:20px;border:1px dashed var(--navy);background:#f7f1e7;color:var(--muted);font-size:13px;line-height:1.7}
+.edit-guide strong{color:var(--navy)}
+@media(max-width:900px){.edu-modules{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.learning-timeline:before{left:20px}.edu-card{grid-template-columns:42px 1fr;gap:12px}.edu-marker{width:42px;height:42px;border-width:5px;font-size:12px}.edu-top{flex-direction:column}.edu-modules{grid-template-columns:1fr}.edu-content{padding:21px}}
+
 </style>
 </head>
 <body>
@@ -337,8 +358,7 @@ footer{background:var(--navy-dark);color:#8fa7d3;padding:18px 52px;font-size:12p
     <a href="#about">ABOUT</a>
     <a href="#career">CAREER</a>
     <a href="#projects">PROJECTS</a>
-    <a href="#ai-course">AI COURSE</a>
-    <a href="#ux-course">UX/UI</a>
+    <a href="#learning">LEARNING</a>
     <a href="#skills">SKILLS</a>
     <a href="#contact">CONTACT</a>
   </nav>
@@ -411,61 +431,127 @@ footer{background:var(--navy-dark);color:#8fa7d3;padding:18px 52px;font-size:12p
     <article class="career-card">
       <div class="career-top">
         <div class="career-company">
-          <h3>회사명 입력</h3>
-          <p>부서명 · 직책 · 고용형태</p>
+          <h3>시립문래청소년센터</h3>
+          <p>행정지원팀 · 사원 · 계약직</p>
         </div>
-        <div class="career-period">YYYY.MM ~ YYYY.MM</div>
+        <div class="career-period">2022.08 ~ 2023.01</div>
       </div>
       <div class="career-content">
         <div class="career-block">
           <h4>담당 업무</h4>
           <ul>
-            <li>웹·모바일 서비스 기획 및 운영</li>
-            <li>요구사항 분석과 화면설계서 작성</li>
-            <li>개발·디자인 협업 및 일정 관리</li>
-            <li>관리자 페이지와 운영 프로세스 개선</li>
+            <li>민원 및 고객 응대 업무</li>
+            <li>프로그램 접수 및 행정 운영 지원</li>
+            <li>행정 문서 및 데이터 관리</li>
+            <li>부서 협업 및 행정 지원</li>
           </ul>
         </div>
         <div class="career-block">
-          <h4>대표 프로젝트 및 역할</h4>
+          <h4>사용한 툴</h4>
           <ul>
-            <li><strong>프로젝트명:</strong> 프로젝트 목적과 서비스 개요</li>
-            <li><strong>담당 역할:</strong> 기획 범위, 협업 범위, 책임 업무</li>
-            <li><strong>주요 산출물:</strong> IA, 화면설계서, 정책서, 보고서</li>
-            <li><strong>사용 도구:</strong> Figma, Notion, Excel, GitHub 등</li>
+            <li><strong>사용한툴:</strong> 엑셀, 워드 등</li>
+            
           </ul>
         </div>
       </div>
-      <div class="career-result"><strong>주요 성과:</strong> 업무 결과 사용자 편의성·운영 효율·처리시간·전환율 등이 어떻게 개선되었는지 작성하세요.</div>
+      <div class="career-result"><strong>주요 성과:</strong> <br> 1. 연간 다양한 청소년 프로그램의 접수 및 운영 행정을 지원하며 이용자 문의 응대부터 행정 처리까지 전 과정을 담당 <br>2 방문·전화 민원 응대를 통해 이용자 불편사항을 신속히 해결하고 서비스 만족도 향상에 기여<br>
+3.프로그램 신청 현황 및 운영 데이터를 체계적으로 관리하여 정확한 행정 운영 지원<br>
+4.시설 대관 및 일정 조율을 담당하며 운영 부서와 협업하여 안정적인 시설 운영 지원<br>
+5.문서 작성, 데이터 관리, 행정 지원 업무를 수행하며 정확성과 책임감을 기반으로 행정 업무의 효율성 향상에 기여</div>
     </article>
 
     <article class="career-card">
       <div class="career-top">
         <div class="career-company">
-          <h3>두 번째 회사명 입력</h3>
-          <p>부서명 · 직책 · 고용형태</p>
+          <h3>야후코리아</h3>
+          <p>메인서치 · 대리 </p>
         </div>
-        <div class="career-period">YYYY.MM ~ YYYY.MM</div>
+        <div class="career-period">2005.04 ~ 2008.05</div>
       </div>
       <div class="career-content">
         <div class="career-block">
           <h4>담당 업무</h4>
-          <ul><li>담당했던 핵심 업무 1</li><li>담당했던 핵심 업무 2</li><li>담당했던 핵심 업무 3</li></ul>
+          <ul><li>메인 검색 콘텐츠 운영 및 노출 전략 수립</li><li>야미(Yammy)서비스 운영 및 관리자 시스템 관리</li><li>검색 트래픽 및 사용자 데이터 분석</li><li>키워드 발굴 및 검색 결과 운영</li></ul>
         </div>
         <div class="career-block">
           <h4>대표 프로젝트 및 역할</h4>
           <ul>
-            <li><strong>프로젝트명:</strong> 프로젝트명 입력</li>
-            <li><strong>담당 역할:</strong> 본인이 직접 수행한 업무</li>
+            <li><strong>프로젝트명:</strong> 야후코리아>이미지,동영상</li>
+            <li><strong>담당 역할:</strong> 컨텐츠관리및 데이터분석</li>
             <li><strong>협업 대상:</strong> 개발자, 디자이너, 운영팀 등</li>
           </ul>
         </div>
       </div>
-      <div class="career-result"><strong>주요 성과:</strong> 수치 또는 변화 중심으로 작성하세요.</div>
+      <div class="career-result"><strong>주요 성과:</strong>  <br>
+         1. 검색 서비스 기획 ,
+관리자(Admin) 시스템 기획 ,
+서비스 운영 기획 ,콘텐츠 운영 <br>
+2. 데이터 분석 ,
+트래픽 분석 ,
+검색 키워드 분석
+ <br>3. 운영 프로세스 개선,운영 조직 관리,프로젝트 협업(PM),서비스 품질 관리(QA)
+ 
+</div>
     </article>
+<article class="career-card">
+      <div class="career-top">
+        <div class="career-company">
+          <h3>중앙ICS</h3>
+          <p>웹마스터 / 웹서비스 운영 · QA · 관리자 시스템 기획</p>
+        </div>
+        <div class="career-period">2002.04 ~ 2005.04</div>
+      </div>
+      <div class="career-content">
+        <div class="career-block">
+          <h4>담당 업무</h4>
+          <ul><li>웹서비스 운영 및 메인 콘텐츠 관리</li><li>관리자(Admin) 시스템 기획</li><li>웹서비스 품질관리(QA) 및 테스트</li><li>데이터 기반 서비스 운영 및 모니터링</li><li>제휴 마케팅및 상품기획</li></ul>
+        </div>
+        <div class="career-block">
+          <h4>대표 프로젝트 및 역할</h4>
+          <ul>
+            <li><strong>프로젝트명:</strong> 야후코리아>이미지,동영상</li>
+            <li><strong>담당 역할:</strong> 컨텐츠관리및 데이터분석</li>
+            <li><strong>협업 대상:</strong> 개발자, 디자이너, 운영팀 등</li>
+          </ul>
+        </div>
+      </div>
+      <div class="career-result"><strong>주요 성과:</strong> <br>1. 웹서비스 메인 콘텐츠 운영 및 관리자(Admin) 시스템 기획 <br>
+2. 갤러리·테마 콘텐츠 관리 기능 및 운영 프로세스 설계<br>
+3. 웹서비스 기능 테스트(QA), 버그 분석 및 품질 개선<br>
+4. 페이지 트래픽, Top Query, 사용자 데이터를 기반으로 한 운영 전략 수립<br>
+5. 개발·기획·운영 부서와 협업하여 서비스 안정성과 운영 효율성 향상</div>
+    </article>
+	  <article class="career-card">
+      <div class="career-top">
+        <div class="career-company">
+          <h3>KT(koreainfogate)</h3>
+          <p>해외영업팀 · 사원    </div>
+        <div class="career-period">2001.02 ~ 2002.03</div>
+      </div>
+      <div class="career-content">
+        <div class="career-block">
+          <h4>담당 업무</h4>
+          <ul><li>다국어 웹서비스 개발</li><li>여행예약 및 쇼핑몰 구축</li><li>웹 애플리케이션 개발</li><li>프로젝트 협업</li></ul>
+        </div>
+        <div class="career-block">
+          <h4>대표 프로젝트 및 역할</h4>
+          <ul>
+            <li><strong>업무:</strong> 한국을 알리는 영어기반의 사이트 개발</li>
+            <li><strong>작업:</strong> PHP와 MySQL을 활용한 웹서비스 개발 및 데이터베이스 연동</li>
+            <li><strong>협업 대상:</strong> 개발자, 디자이너, 운영팀 등</li>
+          </ul>
+        </div>
+      </div>
+      <div class="career-result"><strong>주요 성과:</strong> <br>1. 다국어 웹서비스 개발(PHP/MySQL)<br>
+2. 여행예약 및 쇼핑몰 구축<br>
+3. 웹 애플리케이션 개발 및 유지보수<br>
+4. 데이터베이스(SQL) 연동<br>
+5. 기획·디자인 부서 협업 및 프로젝트 수행</div>
+    </article>
+
   </div>
 
-  <div class="career-guide"><strong>경력 작성 순서:</strong> 회사명 → 근무기간 → 직책 → 담당업무 → 대표 프로젝트 → 본인 역할 → 주요 산출물 → 사용도구 → 성과</div>
+
 </section>
 <section class="section" id="projects">
   <div class="section-head">
@@ -500,46 +586,126 @@ footer{background:var(--navy-dark);color:#8fa7d3;padding:18px 52px;font-size:12p
 </section>
 
 
-<section class="section" id="ai-course">
+
+<section class="section" id="learning">
   <div class="section-head">
-    <div><div class="section-no">04 · AI DATA COURSE</div><h2>AI 전문가 양성과정</h2></div>
-    <p class="section-note">생성형 AI와 데이터 분석을 활용해 기획·분석·자동화 역량을 확장했습니다.</p>
+    <div><div class="section-no">04 · PROFESSIONAL LEARNING</div><h2>전문 교육과정</h2></div>
+    <p class="section-note">AI·데이터, UX/UI, 디지털 교육 경험을 실무 프로젝트와 연결하며 서비스 기획 역량을 지속적으로 확장했습니다.</p>
   </div>
-  <article class="learning-card">
-    <h3>AI·데이터 실무 전문가 양성과정</h3>
-    <p>디지털전환, AI 도구, Python, 데이터 분석, AI Agent, 포트폴리오를 실습 중심으로 학습했습니다.</p>
-    <div class="module-grid">
-      <div class="module"><b>생성형 AI</b>ChatGPT, Claude, Gemini, NotebookLM</div>
-      <div class="module"><b>Python</b>기초 문법, 함수, 클래스, 데이터 처리</div>
-      <div class="module"><b>데이터 분석</b>Pandas, EDA, 상관분석, 인사이트</div>
-      <div class="module"><b>시각화</b>Matplotlib, 보고서, 대시보드</div>
-      <div class="module"><b>AI Agent</b>Workflow, 자동화, 오케스트레이션</div>
-      <div class="module"><b>포트폴리오</b>AI 서비스 기획과 결과물 정리</div>
-    </div>
-  </article>
+
+  <div class="learning-timeline">
+
+    <!-- 교육과정 추가 시 아래 edu-card 전체를 복사하세요. -->
+    <article class="edu-card">
+      <div class="edu-marker">01</div>
+      <div class="edu-content">
+        <div class="edu-top">
+          <div class="edu-title-wrap">
+            <h3>AI 데이터 실무 전문가 양성과정</h3>
+            <div class="edu-org">중장취업사관학교&nbsp; &nbsp;</div>
+          </div>
+          <div class="edu-period">2026.06 ~ 2026.07</div>
+        </div>
+        <p class="edu-summary">생성형 AI, Python, 데이터 분석 및 시각화, AI Agent를 활용한 업무 자동화와 AI 기반 서비스 기획 및 데이터 분석 프로젝트를 수행했습니다.</p>
+        <div class="edu-modules">
+          <div class="edu-module"><b>Generative AI</b>ChatGPT · Claude · Gemini · NotebookLM</div>
+          <div class="edu-module"><b>Python</b>기초 문법 · 함수 · 클래스 · 데이터 처리</div>
+          <div class="edu-module"><b>Data Analysis</b>Pandas · EDA · 전처리 · 상관분석</div>
+          <div class="edu-module"><b>Visualization</b>Matplotlib · 보고서 · 데이터 스토리텔링</div>
+          <div class="edu-module"><b>AI Agent</b>Workflow · 업무 자동화 · 오케스트레이션</div>
+          <div class="edu-module"><b>Project</b>AI 서비스 기획 · 데이터 분석 프로젝트</div>
+        </div>
+        <div class="edu-note"><strong>작업 결과:</strong><br>
+           1. 쇼핑몰 관리자 페이지 구축 프로젝트&nbsp; &nbsp;<br>
+          2. 세션 체류시간과 구매전환율 관계 분석<br>
+3. 청년 인구 및 지역정착 인사이트 프로젝트<br>
+4. 서울시 5대 범죄 데이터 분석<br>
+5. 슬랙 기반 AI 업무 오케스트레이션 기획<br>
+6. API 데이터 자동수집 템플릿
+</div>
+      </div>
+    </article>
+
+    <article class="edu-card">
+      <div class="edu-marker">02</div>
+      <div class="edu-content">
+        <div class="edu-top">
+          <div class="edu-title-wrap">
+            <h3>UX/UI 부트캠프</h3>
+            <div class="edu-org">멋쟁이 사자처럼 부트캠프&nbsp;</div>
+          </div>
+          <div class="edu-period">2025.08 ~ 2026.01</div>
+        </div>
+        <p class="edu-summary">사용자 리서치부터 문제 정의, IA 설계, 화면설계, 프로토타입 제작, 사용성 테스트까지 UX/UI 기반 서비스 기획 프로세스를 실습했습니다.</p>
+        <div class="edu-modules">
+          <div class="edu-module"><b>UX Research</b>설문 · 인터뷰 · 어피니티 다이어그램</div>
+          <div class="edu-module"><b>Problem Definition</b>Persona · Needs · Pain Point</div>
+          <div class="edu-module"><b>Information Architecture</b>IA · 메뉴 구조 · User Flow</div>
+          <div class="edu-module"><b>UI Planning</b>Wireframe · 화면설계서 · 정책 정의</div>
+          <div class="edu-module"><b>Prototype</b>Figma · Component · Design System</div>
+          <div class="edu-module"><b>Validation</b>사용성 테스트 · 개선안 · 반응형 구현</div>
+        </div>
+        <div class="edu-note"><strong>작업 결과 :&nbsp;&nbsp;</strong>사용자 중심의 서비스 기획 프로세스를 실습하며 UX 리서치부터 화면설계, 프로토타입 제작, 사용성 테스트까지 전 과정을 수행
+사용자 요구사항을 정보구조와 화면으로 구체화하는 기획 역량을 강화하고, 실제 서비스 기획 산출물을 제작하여 협업 기반의 프로젝트 수행 경험을 확보 </div>
+      </div>
+    </article>
+
+    <article class="edu-card">
+      <div class="edu-marker">03</div>
+      <div class="edu-content">
+        <div class="edu-top">
+          <div class="edu-title-wrap">
+            <h3>디지털튜터</h3>
+            <div class="edu-org">한국과학창의재단</div>
+          </div>
+          <div class="edu-period">2024.10 ~ 2024.12</div>
+        </div>
+        <p class="edu-summary">초·중·고등학교 수업 현장에서 교사의 디지털 수업 운영을 지원하고, 디지털 기기와 교육용 소프트웨어 관리, 디지털 교과서 활용 지원을 통해 학습자의 디지털 활용 격차를 줄이는 실무 교육을 이수했습니다.</p>
+        <div class="edu-modules">
+          <div class="edu-module"><b>Digital Classroom</b>디지털 교과서 활용 수업 지원</div>
+          <div class="edu-module"><b>Device Support</b>태블릿 · 노트북 · 디지털 기기 관리</div>
+          <div class="edu-module"><b>Software Support</b>교육용 소프트웨어 설치 및 운영 지원</div>
+          <div class="edu-module"><b>Digital Literacy</b>학습자별 디지털 활용 지원</div>
+          <div class="edu-module"><b>Teacher Assistance</b>교사 수업 준비와 현장 운영 보조</div>
+          <div class="edu-module"><b>Advanced Course Ⅱ</b>Python 프로그램 교육</div>
+        </div>
+        <div class="edu-note"><strong>작업결과 :&nbsp;</strong> 실무적인 업무와, 파이선의 심화과정&nbsp;</div>
+      </div>
+    </article>
+
+    <article class="edu-card">
+      <div class="edu-marker">04</div>
+      <div class="edu-content">
+        <div class="edu-top">
+          <div class="edu-title-wrap">
+            <h3>메타버스 &amp; AI 강사양성과정</h3>
+            <div class="edu-org">영등포 여성인력센터</div>
+          </div>
+          <div class="edu-period">2024.08 ~ 2024.10</div>
+        </div>
+        <p class="edu-summary">AI 콘텐츠 제작과 메타버스·VR 플랫폼을 교육에 활용하는 방법을 실습하고, 다양한 AI 도구를 활용한 이미지·음악·체험형 콘텐츠 제작 및 교육용 프롬프트 작성 역량을 익혔습니다.</p>
+        <div class="edu-modules">
+          <div class="edu-module"><b>AI Drawing</b>Quick, Draw! · AutoDraw · 스케치 기반 도구</div>
+          <div class="edu-module"><b>Music &amp; Content AI</b>Suno · 콘텐츠 제작 실습</div>
+          <div class="edu-module"><b>Prompt Writing</b>교육용 프롬프트 작성과 결과 개선</div>
+          <div class="edu-module"><b>Metaverse</b>ZEPETO · 가상공간 콘텐츠 실습</div>
+          <div class="edu-module"><b>VR Creation</b>CoSpaces · VR 체험 콘텐츠 제작</div>
+          <div class="edu-module"><b>Instructor Practice</b>AI·메타버스 수업안 및 강의 실습</div>
+        </div>
+        <div class="edu-note"><strong>결과 :&nbsp; </strong><br>1.교육생들의 AI 도구 활용과 메타버스 실습이 원활하게 진행될 수 있도록 교육 운영을 지원<br>
+2.다양한 생성형 AI와 메타버스 플랫폼 실습을 통해 디지털 콘텐츠 제작 및 AI 활용 역량을 향상<br>
+3.교육생의 수준에 맞춘 실습 지원과 문제 해결을 통해 교육 만족도 및 실습 완성도를 높이는 데 기여 </div>
+      </div>
+    </article>
+
+  </div>
+
+
 </section>
 
-<section class="section" id="ux-course">
-  <div class="section-head">
-    <div><div class="section-no">05 · UX/UI COURSE</div><h2>UX/UI 과정</h2></div>
-    <p class="section-note">사용자 조사부터 정보구조, 화면설계, 프로토타입, 반응형 구현까지 전 과정을 학습했습니다.</p>
-  </div>
-  <article class="learning-card">
-    <h3>UX/UI 전문과정</h3>
-    <p>사용자의 문제를 발견하고 이를 화면과 서비스 구조로 구체화하는 과정을 프로젝트로 수행했습니다.</p>
-    <div class="module-grid">
-      <div class="module"><b>UX Research</b>설문, 인터뷰, 어피니티 다이어그램</div>
-      <div class="module"><b>사용자 정의</b>Persona, Pain Point, 시나리오</div>
-      <div class="module"><b>서비스 구조</b>IA, User Flow, 메뉴체계</div>
-      <div class="module"><b>UI 설계</b>Wireframe, Prototype, Design System</div>
-      <div class="module"><b>Figma</b>Auto Layout, Component, Variables</div>
-      <div class="module"><b>웹 구현</b>HTML, CSS, JavaScript, 반응형</div>
-    </div>
-  </article>
-</section>
 <section class="section" id="skills">
   <div class="section-head">
-    <div><div class="section-no">04 · SERVICES & SKILLS</div><h2>핵심 역량</h2></div>
+    <div><div class="section-no">05 · SERVICES & SKILLS</div><h2>핵심 역량</h2></div>
   </div>
   <div class="skills">
     <div class="skill"><strong>웹·서비스 기획</strong><span>요구사항, 정책, 화면설계, 관리자 UX</span></div>
